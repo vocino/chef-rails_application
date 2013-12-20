@@ -1,6 +1,6 @@
 require "securerandom"
 
-default[:rails][:ruby][:version] = "1.9.1"  # include ruby/recipes/{ver}.rb
+default[:rails][:ruby][:version] = "2.0.0"  # include ruby/recipes/{ver}.rb
 default[:languages][:ruby][:default_version] = node[:rails][:ruby][:version]
 
 default[:rails][:app][:name] = "rails_app" # must be one word
@@ -21,7 +21,7 @@ default[:rails][:deploy][:enable_submodules] = true
 default[:rails][:deploy][:action] = :deploy # can be :deploy or :force_deploy
 default[:rails][:deploy][:rollback_on_error] = true
 
-default[:rails][:deploy][:precompile_assets] = nil # true or false
+default[:rails][:deploy][:precompile_assets] = true # true or false
 default[:rails][:deploy][:database_master_role] = nil # used when rendering the `database.yml` file for the host
 default[:rails][:deploy][:database_template] = nil # nil means database.yml.erb will be used
 default[:rails][:deploy][:bundler] = true
